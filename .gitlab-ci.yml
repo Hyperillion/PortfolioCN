@@ -2,10 +2,9 @@ image: alpine:latest
 
 pages:
   script:
-    - mkdir .public
-    - cp -r * .public
+    - echo "Deploying static website"
   artifacts:
     paths:
-      - .public
+      - public
   only:
     - main
