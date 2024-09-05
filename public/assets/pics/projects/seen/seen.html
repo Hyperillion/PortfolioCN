@@ -1,47 +1,101 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Seen</title>
+  <title>Gaudi Vision</title>
+  <meta charset="utf-8">
+  <!-- <title>carousel模块快速使用</title> -->
+  <link href="//unpkg.com/layui@2.9.16/dist/css/layui.css" rel="stylesheet">
   <style>
     body {
       /* font-family: Arial, sans-serif; */
       margin: 0;
       padding: 0;
     }
+
     header {
       background-color: #000000;
       color: #fff;
       padding: 20px;
       text-align: left;
     }
-    h2 {
-      margin: 0;
+
+    h1 {
+      margin: 5% 0;
     }
+
+    h2 {
+      margin: 5% 0;
+    }
+
     main {
       max-width: 800px;
       margin: 20px auto;
       padding: 20px;
     }
+
     img {
       max-width: 100%;
       height: auto;
       margin-bottom: 20px;
     }
+
     p {
       line-height: 1.5;
     }
+
+    .popupBox {
+      color: #fff;
+      margin: 5% 10%;
+      border-radius: 5px;
+    }
+
+    .layui-layer {
+      background: rgba(5, 5, 5, 0.9);
+    }
   </style>
 </head>
+
 <body>
+  <div class="popupBox">
+    <h1>SEE(N)</h1>
+    <div class="layui-carousel" id="test1">
+      <div carousel-item>
+        <div><img src="./assets/pics/projects/gaudi-vision/gaudi-vision.jpg"></div>
+        <div><img src="./assets/pics/projects/gaudi-vision/gaudi-vision.jpg"></div>
+        <div><img src="./assets/pics/projects/gaudi-vision/gaudi-vision.jpg"></div>
+        <div><img src="./assets/pics/projects/gaudi-vision/gaudi-vision.jpg"></div>
+        <div><img src="./assets/pics/projects/gaudi-vision/gaudi-vision.jpg"></div>
+        <div><img src="./assets/pics/projects/gaudi-vision/gaudi-vision.jpg"></div>
+      </div>
+    </div>
 
-    <h1>Seen</h1>
-    <!-- <img src=""> -->
-    <h2>Project Background</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec nunc auctor, aliquet nisl sed, tincidunt nunc. Nulla facilisi. Fusce id justo auctor, aliquam nunc id, aliquet nisl. Sed id semper nunc. Nulla facilisi. Fusce id justo auctor, aliquam nunc id, aliquet nisl.</p>
+    <h2>项目简介</h2>
+    <p>SEE(N) 是一部实验性电影项目，通过“窥视癖”和“诡异感”的主题，带领观众进入一个充满怀旧和诡异气息的童年记忆世界。
+      影片使用Super 8mm胶片拍摄，以第三人称的视角展现了一位小女孩在孤独的游乐场中经历的梦幻与恐惧世界。这个项目旨在
+      通过实验电影的形式探讨人类感知和情感的多元性，探索孤独、恐惧以及童年的记忆和想象。影片通过将影像投影到日记本上，
+      邀请观众在上面书写和绘画，开创性地为胶片电影增加了互动元素。观众的参与赋予了在影片个性化的叙事维度的同时增强了
+      情感共鸣，让观众从被动的观察者转变为故事的共同创造者。观众的交互结合8mm胶片质感，影片旨在唤起观众对童年记忆和
+      内心情感的深层共鸣。</p>
     <h2>Project Images</h2>
-    <!-- <img src="image1.jpg" alt="Image 1">
-    <img src="image2.jpg" alt="Image 2">
-    <img src="image3.jpg" alt="Image 3"> -->
 
+  </div>
+
+
+  <script src="//unpkg.com/layui@2.9.16/dist/layui.js"></script>
+  <script>
+    layui.use('carousel', function () {
+      var carousel = layui.carousel;
+      //建造实例
+      carousel.render({
+        elem: '#test1'
+        , width: '100%' //设置容器宽度
+        , height: '60vh'
+        , arrow: 'always' //始终显示箭头
+        //,anim: 'updown' //切换动画方式
+      });
+    });
+  </script>
 </body>
+
 </html>

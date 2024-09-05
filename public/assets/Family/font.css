@@ -88,3 +88,17 @@
 	/* font-weight: normal;
 	font-style: normal; */
 }
+
+@font-face {
+	font-family:dotCN;
+	src:url("dotCN/dotCN.ttf");
+	/* font-weight: normal;
+	font-style: normal; */
+}
+
+@font-face {
+	font-family:SourceHan;
+	src:url("SourceHan/SourceHanSF.ttf");
+	/* font-weight: normal;
+	font-style: normal; */
+}
