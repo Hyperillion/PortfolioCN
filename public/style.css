@@ -43,10 +43,10 @@ h1{
     /* color:#f0f0f0; */
 	/* margin: 0; */
 	color: #7c7c7c;
-	margin: 30px;
+	margin: 20px;
 	margin-left: 0;
 	/* padding: 0; */
-	font-size: 60px;
+	font-size: 54px;
 	/* font-family: LED_Matrix; */
 	font-family: Technology;
 	font-weight: 500;
@@ -65,7 +65,7 @@ h2{
 	margin:20px;
 	margin-top: 40px;
 	margin-left: 0;
-	font-size: 50px;
+	font-size: 45px;
 	font-family: SourceHan;
 	font-weight: 700;
 	letter-spacing: 2px;
@@ -75,10 +75,10 @@ h2{
 h3{
 	/* margin-top: 10px; */
 	/* padding: 0; */
-	margin:10px;
+	margin:20px;
 	margin-top: 10px;
 	margin-left: 0;
-	font-size: 40px;
+	font-size: 32px;
 	font-family: SourceHan;
 	font-weight: 300;
 	letter-spacing: 2px;
@@ -88,10 +88,10 @@ h3{
 h4{
 	/* margin-top: 10px; */
 	/* padding: 0; */
-	margin:10px;
+	margin:5px;
 	margin-top: 10px;
 	margin-left: 0;
-	font-size: 30px;
+	font-size: 24px;
 	font-family: SourceHan;
 	font-weight: 300;
 	letter-spacing: 2px;
@@ -99,12 +99,14 @@ h4{
 }
 
 p{
-	font-size: 20px;
+	font-size: 18px;
 	font-family: SourceHan;
 	font-weight: 300;
 	letter-spacing: 2px;
+	line-height:30px;
+	/* word-spacing: 4px; */
 	cursor: default;
-	margin-bottom: 5px;
+	margin-bottom: 0px;
 }
 
 p a:link {
@@ -139,6 +141,7 @@ body {
 .hoverBox{
 	width: 100%;
 	padding-bottom: 60px;
+	transition: 0.35s ease-in-out;
 	color: #3f3f3f;
 	.intextLink{
 		color: #3f3f3f;
@@ -187,10 +190,15 @@ body {
 .hoverBox span:nth-child(3){
 	display: inline-block;
 	font-family: dotCN;
-	font-size: 70px;
+	font-size: 50px;
 
 	transform: translateY(-8px);
 	/* translate: 0px, 30px; */
+}
+
+.projectBlock{
+	padding: 20px 0px;
+	zoom: 0.8;
 }
 
 .copyright{
@@ -305,7 +313,7 @@ body {
 }
 
 .limitBox{
-	width:95%;
+	width:70%;
 }
 
 /* details */
@@ -628,6 +636,7 @@ body {
 	/* left: 50%;
 	transform: translateX(-50%); */
 	padding: 30px;
+	padding-left: 60px;
 	/* background-color: rgba(0, 0, 0, 0.5); */
 	/* border-radius: 10px; */
 }
