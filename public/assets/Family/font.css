@@ -102,3 +102,10 @@
 	/* font-weight: normal;
 	font-style: normal; */
 }
+
+@font-face {
+	font-family:SourceHanSerif;
+	src:url("SourceHan/SourceHanSerif.ttf");
+	/* font-weight: normal;
+	font-style: normal; */
+}
