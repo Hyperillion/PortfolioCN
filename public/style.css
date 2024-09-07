@@ -489,7 +489,8 @@ body {
 
 .description{
 	margin: 0;
-	font-size: 20px;
+	margin-top: 20px;
+	font-size: 18px;
 	box-sizing: border-box;
 	color: #F0F0F0;
 	line-height: 25px;
