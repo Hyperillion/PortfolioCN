@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/addons/p5.sound.min.js"></script>
+  <!--     import dat.gui     -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.9/dat.gui.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8" />
+  <style>
+    .loadingBG {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #000000bb;
+      z-index: 99999;
+    }
+
+    .loadingBar {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      /* width: 100%; */
+      z-index: 999999;
+    }
+  </style>
+  <title>Beyond Inkwash</title>
+
+</head>
+
+<body>
+  <div class="loadingBG">
+    <img class="loadingBar" src="assets/pics/loading-bars.svg" alt="Loading icon" />
+  </div>
+  <main>
+  </main>
+  <script src="sketch.js"></script>
+  <script>
+    window.onload = function () {
+      document.querySelector('.loadingBG').style.display = 'none';
+    };
+  </script>
+</body>
+
+</html>

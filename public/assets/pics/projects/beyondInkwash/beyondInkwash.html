@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Gaudi Vision</title>
+  <meta charset="utf-8">
+  <!-- <title>carousel模块快速使用</title> -->
+  <link href="//unpkg.com/layui@2.9.16/dist/css/layui.css" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      /* font-family: Arial, sans-serif; */
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #000000;
+      color: #f0f0f0;
+      padding: 20px;
+      text-align: left;
+    }
+
+    h1 {
+      margin: 5% 0;
+      color: #f0f0f0;
+      font-weight: 100;
+    }
+
+    h1 span {
+      /* color: #f1c40f; */
+      font-weight: 100;
+    }
+
+    h2 {
+      margin: 7% 0 4% 0;
+      font-size: 50px;
+      font-family: dotCN;
+      font-weight: 100;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      /* margin-bottom: 20px; */
+    }
+
+    p {
+      line-height: 1.5;
+    }
+
+    .popupBox {
+      color: #fff;
+      margin: 5% 10%;
+      border-radius: 5px;
+    }
+
+    .layui-layer {
+      background: rgba(5, 5, 5, 0.9);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="popupBox">
+    <h1><span style="font-family: dotCN;">水墨之外 |</span> Beyond Ink-wash</h1>
+    <div class="layui-carousel" id="test1" style="background-color:#000 ;">
+      <div carousel-item>
+        <iframe src="./assets/pics/projects/beyondInkwash/ProjectFolder/index.html" width="100%" height="100%"
+          allowfullscreen="true"> </iframe>
+        <div><img src="./assets/pics/projects/beyondInkwash/beyondInkwash.png"></div>
+
+
+      </div>
+    </div>
+
+
+    <h2>项目简介</h2>
+    <p>“Beyond the Ink-wash” 是一个融合了中国传统水墨画美学与现代编程技术的交互式艺术项目，用户可以通过操作界面实时生成独特的水墨画，并可以通过心率传感器或音频律动等外部输入设备进一步个性化画作。项目通过粒子系统模拟传统笔触的效果，同时再现了水墨画中的山水、柳树、船只等经典元素，为观众提供了在数字平台上体验创作水墨画的沉浸式体验。项目不仅传承了传统艺术的精髓，还探索了数字艺术与用户互动的全新形式。
+    </p>
+
+    <h2>形式</h2>
+    <p>8mm胶片（数字化）实验电影</p>
+
+    <h2>概念</h2>
+    <p>
+        “Beyond the Ink-wash” 的灵感源自中国传统水墨画的美学与意境，通过现代编程技术再现并扩展了这一古老艺术形式的表现力。水墨画已有数千年历史，而编程则是当代技术的产物。该项目正是通过两者的碰撞与融合，赋予用户创作传统艺术的新方式，并探索现代科技如何影响和拓展艺术的边界。 </p>
+    <h2>项目亮点</h2>
+    <p>
+        · 互动体验: 用户可通过界面实时生成水墨画，并能通过心率传感器或音频律动生成独一无二的画作。<br><br>
+        · 技术创新: 通过P5.js 粒子系统实现水墨流动和笔触效果，模拟自然现象如雨滴与水面的互动。<br><br>
+        · 传统与现代结合: 使用现代编程技术再现千年水墨艺术，融合自然与技术，提供沉浸式艺术体验。 </p>
+
+    <h2>项目背景</h2>
+    <p>
+        “Beyond the Ink-wash” 项目旨在探讨传统与现代技术的交互与融合。水墨画是中国传统艺术的代表之一，以其独特的笔触、留白和墨色的层次感展现自然与人文情怀。而现代技术的发展让我们能够通过数字手段去重现这些效果，并为用户提供更深层次的互动体验。通过使用传感器和编程，用户不仅能感受到传统水墨画的美，还能根据个人的生理数据或环境声音来创作独一无二的作品。
+    </p>
+
+    <h2>展览设计</h2>
+    <p>作品展示在交互式屏幕上，观众可通过触摸界面或外部传感器输入实时生成水墨画。除了静态画作，观众还可以在创作过程中进行干预，改变画作的生成方式，从而让每一位观众都能够创作属于自己的作品。展览中也会展示由不同观众生成的画作，形成一场观众与艺术之间的合作与对话。
+    </p>
+
+    <h2>项目团队</h2>
+    <p>叶进然 | 创作者</p>
+    <p>Jung Hyun Moon | 指导教授</p>
+
+  </div>
+
+
+  <script src="//unpkg.com/layui@2.9.16/dist/layui.js"></script>
+  <script>
+    layui.use('carousel', function () {
+      var carousel = layui.carousel;
+      //建造实例
+      carousel.render({
+        elem: '#test1'
+        , width: '100%' //设置容器宽度
+        , height: '60vh'
+        , arrow: 'always' //始终显示箭头
+        //,anim: 'updown' //切换动画方式
+      });
+    });
+  </script>
+</body>
+
+</html>
