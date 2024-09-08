@@ -362,34 +362,41 @@
 
 
         let popupHTML = '<div>fetch error</div>';
+        let havePoped = false;
+        if (havePoped === false) {
+            function displayPopup(targeturl) {
+                havePoped = true;
+                loadHTML(targeturl).then(() => {
+                    layui.use(function () {
+                        var layer = layui.layer;
+                        var util = layui.util;
+                        var $ = layui.$;
 
-        function displayPopup(targeturl) {
-            loadHTML(targeturl).then(() => {
-                layui.use(function () {
-                    var layer = layui.layer;
-                    var util = layui.util;
-                    var $ = layui.$;
-
-                    layer.open({
-                        type: 1,
-                        title: false,
-                        offset: 'r',
-                        anim: 'slideLeft', // 从右往左
-                        area: ['65%', '100%'],
-                        shade: 0.000000001,
-                        // fixed: true,
-                        shadeClose: true,
-                        // scrollbar: false,
-                        // content: $('#shell'),
-                        content: popupHTML,
-                        move: false,
-                        resize: false,
-                        closeBtn: 0,
+                        layer.open({
+                            type: 1,
+                            title: false,
+                            offset: 'r',
+                            anim: 'slideLeft', // 从右往左
+                            area: ['65%', '100%'],
+                            shade: 0.000000001,
+                            // fixed: true,
+                            shadeClose: true,
+                            // scrollbar: false,
+                            // content: $('#shell'),
+                            content: popupHTML,
+                            move: false,
+                            resize: false,
+                            closeBtn: 0,
+                            end: function () {
+                                havePoped = false;
+                            }
+                        });
                     });
                 });
-            });
 
+            }
         }
+
 
         function loadHTML(targeturl) {
             // 使用 fetch 获取 HTML 内容并返回 Promise
