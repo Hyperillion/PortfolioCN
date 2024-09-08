@@ -300,7 +300,7 @@ function generateMozz() {
     mozz.push(
       new Mozzie(
         random(-windowWidth/2, windowWidth*1.5),
-        random(windowHeight),
+        -500,
         random(1, 2)
       ));
     amount++;
