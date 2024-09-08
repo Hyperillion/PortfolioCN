@@ -15,6 +15,7 @@ let ui = {
   AliveMozzies: 10,
   MozzieSound: true,
   DarkMode: false,
+  SeeAttackRange: false,
 }
 // let handDisplay = true;
 
@@ -27,6 +28,7 @@ function setup() {
   gui.add(ui, 'AliveMozzies', 1, 20).step(1).listen();
   gui.add(ui, 'MozzieSound').listen();
   gui.add(ui, 'DarkMode').listen();
+  gui.add(ui, 'SeeAttackRange').listen();
 
 
   mozzSound = createAudio('./assets/mozz.mp3');
@@ -38,7 +40,7 @@ function setup() {
     mozz[i] = new Mozzie(
       random(windowWidth),
       random(windowHeight),
-      random(1, 3)
+      random(1, 2)
       // 100,100,2
     );
   }
@@ -294,12 +296,12 @@ function updateUI() {
 }
 
 function generateMozz() {
-  if (random(1) < 0.005 && aliveAmount < 15) {
+  if (random(1) < 0.005 && aliveAmount < 5) {
     mozz.push(
       new Mozzie(
         random(windowWidth),
         random(windowHeight),
-        random(1, 3)
+        random(1, 2)
       ));
     amount++;
     aliveAmount++;
@@ -318,22 +320,21 @@ function getHandData() {
   if (!handmark) return;
   handPosition = createVector(sketch.width - handmark[9].x * sketch.width, handmark[9].y * sketch.height);
   handSize = dist(handmark[21].x * sketch.width, handmark[21].y * sketch.height, handmark[5].x * sketch.width, handmark[5].y * sketch.height);
-  text(handSize, 100, 100);
+  // text(handSize, 100, 100);
 }
 
 function killMoz() {
   // console.log(handGesture);
   if (handGesture == "kill" && prevHandGesture != "kill") {
-    // circle(handPosition.x, handPosition.y, 100);
     for (i = 0; i < amount; i++) {
       if (mozz[i].pos.dist(handPosition) < handSize && mozz[i].alive) {
         mozz[i].alive = false;
         // mozz.splice(i, 1);
         aliveAmount--;
       }
-      else if (mozz[i].pos.dist(handPosition) < handSize * 4) {
+      else if (mozz[i].pos.dist(handPosition) < handSize * 4 && mozz[i].alive) {
 
-        mozz[i].vel = p5.Vector.sub(mozz[i].pos, handPosition).mult(0.3);
+        mozz[i].vel.add(p5.Vector.sub(mozz[i].pos, handPosition).mult(0.3));
       }
     }
   }
@@ -346,10 +347,10 @@ function drawHands() {
   //draw circle at each hand position
   handMarks.forEach((landmark, index) => {
 
-  firstHandmark = handMarks[0];
-  // console.log(index, firstHandmark);
-  // beginShape();
-  // landmark.forEach((point, index) => {
+    firstHandmark = handMarks[0];
+    // console.log(index, firstHandmark);
+    // beginShape();
+    // landmark.forEach((point, index) => {
     //   // circle(sketch.width - point.x * sketch.width, point.y * sketch.height, 10);
     //   curveVertex(sketch.width - point.x * sketch.width, point.y * sketch.height);
     // });
@@ -412,6 +413,13 @@ function drawHands() {
     //   });
     //   endShape(CLOSE);
     // });
+    if (ui.SeeAttackRange) {
+      push();
+      noStroke();
+      fill(255, 0, 0, 50);
+      circle(handPosition.x, handPosition.y, handSize * 2);
+      pop();
+    }
     pop();
   })
 }

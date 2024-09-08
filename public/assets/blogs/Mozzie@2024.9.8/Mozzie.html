@@ -7,77 +7,110 @@
     <!-- <title>carousel模块快速使用</title> -->
     <link href="//unpkg.com/layui@2.9.16/dist/css/layui.css" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
-    <style>
-        body {
-            /* font-family: Arial, sans-serif; */
-            margin: 0;
-            padding: 0;
-        }
+    <!-- Include Prism.js CSS for code styling -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+    <!-- Include Prism.js JS library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</head>
+<style>
+    body {
+        /* font-family: Arial, sans-serif; */
+        margin: 0;
+        padding: 0;
+        cursor: default;
+    }
 
-        header {
-            background-color: #000000;
-            color: #f0f0f0;
-            padding: 20px;
-            text-align: left;
-        }
+    header {
+        background-color: #000000;
+        color: #f0f0f0;
+        padding: 20px;
+        text-align: left;
+    }
 
-        h1 {
-            margin: 5% 0;
-            color: #f0f0f0;
-            font-weight: 100;
-        }
+    h1 {
+        margin: 5% 0;
+        color: #f0f0f0;
+        font-weight: 100;
+    }
 
-        h1 span {
-            /* color: #f1c40f; */
-            font-weight: 100;
-        }
+    h1 span {
+        /* color: #f1c40f; */
+        font-weight: 100;
+    }
 
-        h2 {
-            margin: 7% 0 4% 0;
-            font-size: 40px;
-            font-family: dotCN;
-            font-weight: 100;
-        }
+    h2 {
+        margin: 7% 0 4% 0;
+        /* font-size: 40px; */
+        font-family: dotCN;
+        font-weight: 100;
+    }
 
-        main {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-        }
+    h3 {
+        margin: 5% 0 4% 0;
+        /* font-size: 40px; */
+        font-family: dotCN;
+        font-weight: 100;
+    }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            /* margin-bottom: 20px; */
-        }
+    main {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+    }
 
-        p {
-            line-height: 1.5;
-        }
+    .inTextImg {
+        max-width: 100%;
+        height: auto;
+        margin: 20px 0;
+        /* margin-bottom: 20px; */
+    }
 
-        .popupBox {
-            color: #fff;
-            margin: 5% 10%;
-            border-radius: 5px;
-        }
+    p {
+        line-height: 1.5;
+    }
 
-        .layui-layer {
-            background: rgba(5, 5, 5, 0.9);
-        }
+    .popupBox {
+        color: #fff;
+        margin: 5% 10%;
+        border-radius: 5px;
+    }
 
-        .layui-btn {
-            background-color: #0f0f0f;
-            color: #f0f0f0;
-            border-color: #f0f0f0;
-        }
+    .layui-layer {
+        background: rgba(5, 5, 5, 0.9);
+    }
 
-        .layui-btn:hover {
-            background-color: #fff;
-            color: #0f0f0f;
-            border-color: #f0f0f0;
-        }
+    .layui-btn {
+        background-color: #0f0f0f;
+        color: #f0f0f0;
+        border-color: #f0f0f0;
+    }
 
-    </style>
+    .layui-btn:hover {
+        background-color: #fff;
+        color: #0f0f0f;
+        border-color: #f0f0f0;
+    }
+
+
+    code[class*="language-"],
+    pre[class*="language-"] {
+        margin: 20px 0;
+        color: #999999;
+        /* Default text color */
+        background-color: #0e0e0e;
+        text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    }
+
+    :not(pre)>code[class*=language-],
+    pre[class*=language-] {
+        background: #0e0e0e;
+    }
+
+    .token.operator {
+        background-color: transparent;
+        color: inherit;
+    }
+</style>
 </head>
 
 <body>
@@ -93,22 +126,367 @@
         <button class="layui-btn" onclick="startStop()">START/STOP</button>
 
         <h2>How to Play</h2>
-        <p><b>Step 1:</b>  Find a place that is bright enough with a clear background. <br>
+        <p><b>Step 1:</b> Find a place that is bright enough with a clear background. <br>
             <b>Step 2:</b> Click the "START/STOP" button to start the game. <br>
-            OR <a href="./assets/blogs/Mozzie@2024.9.8/ProjectFolder/index.html" target="_blank">Play in Full Screen</a> <br>
+            OR <a href="./assets/blogs/Mozzie@2024.9.8/ProjectFolder/index.html" target="_blank">Play in Full Screen</a>
+            <br>
             <b>Step 3:</b> Use your LEFT hand to catch all the mosquitoes. <br>
             <b>Step 4:</b> Enjoy! (Though probably not, especially with the sound on) :P
         </p>
-        
+
         <h2>Useful Hints</h2>
         <p><b>1.</b> A plain-colored background improves hand recognition. <br>
-            <b>2.</b> Try to use the center of your palm to catch the mosquitoes. <br>
-            <b>3.</b> If you miss a mosquito, it will escape. <br>
+            <b>2.</b> Try to use the center of your palm to catch the mozzies. <br>
+            <b>3.</b> If you miss a mozzie, it will escape. <br>
             <b>4.</b> A good strategy is to keep your hand still and wait the mosquitoes to come.<br>
-            <b>5.</b> Annoyed by the sound? You can turn it off in the Control Panel.</p>
+            <b>5.</b> Can't catch the mozzies? You can turn on and see the attack range in the Control Panel.<br>
+            <b>6.</b> Annoyed by the sound? You can turn it off in the Control Panel.
+        </p>
+
 
         <h2>Idea</h2>
-        <p>The idea of this project is simple: kill all the mosquitoes.</p>
+        <p>Why I'm making this hilarious project? Answer is simple: I HATE MOSQUITOES! <br>Everyone should hate them
+            :(<br><br>
+
+            Imaging a situation: In a hot summer night, you are trying to sleep but the mosquitoes are buzzing around
+            your ears. You can't sleep, you can't kill them all, and you can't ignore them. What can you do? <br><br>
+
+            Inspired by this scenario, I decided to make a game that allows you to catch mosquitoes with your hand. It's
+            a fun and interactive project that can be played on your anywhere. Once you think you are annoyed by the
+            mozzies, you should turn on the game and catch them all! <br><br>
+
+            This is much simpler than the real life, but it's a fun way to kill time and release your stress.<br><br>
+
+            Additionally, this project can be used to provide an immersive experience for those who is REALLY LUCKY to
+            have no mosquitoes around. <br><br>
+        </p>
+        <h2>Technical Development</h2>
+        <h3>Step 1. You need to get some mozzies here</h3>
+        <p>First, I need to create some mosquitoes. Since we are going to generate a lot of mozzies and they are having
+            a self-moving behavior, It's a good choice for us to write a Mozzie Class. With the help of the mozzie
+            class, every mozzie is able to follow a specific rule and behave differently. </p>
+        <pre><code class="language-javascript">
+    //the constructor will only have some basic properties at the beginning
+    //other properties are added during the developing process
+        class Mozzie {
+            constructor(x, y, size) {
+                if (ui.MozzieSound) {
+                this.mozzSound = createAudio('./assets/mozz.mp3');
+                this.mozzSound.loop(true);
+                this.mozzSound.volume(0.2);
+                this.mozzSound.play();
+                }
+                this.mozzSoundOn = ui.MozzieSound;
+                this.pos = createVector(x, y);
+                this.vel = createVector(0, 0);
+                this.status = 0;//0 means in the canvas, 1 means out of the canvas
+                this.size = size;
+                this.wingSpeed = 0;
+                this.eyeSpeed = 0;
+                this.alive = true;
+                this.rotate = 0;
+            }
+        }
+</code></pre>
+        <p>After creating the Mozzie Class, we need to make it display on the canvas. Then we use a <code
+                class="language-javascript">display()</code> function
+            to draw the appearance of the mozzie. <br><br>
+            Don't forget to use the <code class="language-javascript">push()</code> and <code
+                class="language-javascript">pop()</code> function to make sure the transformation and properties only
+            applies to the component you want.
+        </p>
+
+        <pre><code class="language-javascript">
+    //the constructor will only have some basic properties at the beginning
+    //other properties are added during the developing process
+    display() {
+        push();
+
+        strokeWeight(0.5);
+        translate(this.pos.x, this.pos.y);
+        scale(this.size);
+        if (this.vel.x > 0) {
+        translate(40, 0);
+        scale(-1, 1);
+        }
+        rotate(this.rotate);
+
+        fill(180, 150, 214);
+        ellipse(21, 1, 25, 10);//body
+
+        this.drawLegs();//legs
+        this.drawWings();//wings
+
+        fill(145, 100, 200);
+        circle(7, 1.5, 10);//head
+        fill(255);
+        circle(0, 0, 10);//left eye
+        circle(14, 3, 12);//right eye
+
+        noFill();
+        //left eyeline
+        curve(5, -10, -2.6, -4.4, 5, 0, 10, -10);
+        curve(3, -9, -4.3, -2.7, 4.5, 2, 8, -9);
+        //right eyeline
+        curve(5, -10, 8.5, 0.3, 19.2, 0, 20, -10);
+        curve(3, -9, 8, 2.5, 20, 2., 8, -9);
+
+        fill(0);
+        circle(1 + this.eyeSpeed, 0 + this.eyeSpeed * 0.4, 1) //left eyeball
+        circle(12 + this.eyeSpeed, 2 + this.eyeSpeed * 0.1, 1.3) //right eyeball
+
+        this.drawMouth();//Mouth
+
+        pop();
+    }
+</code></pre>
+        <p>You probably have noticed that we have a <code class="language-javascript">this.eyeSpeed</code> and <code
+                class="language-javascript">this.wingSpeed</code> in the Mozzie Class. These two
+            properties are used to make the eyes and wings of the mozzie move. <br><br>
+
+            In fact, the mozzie is not only moving its eyes and wings, but also moving its body position. The movement
+            of its body is controlled by the <code class="language-javascript">this.pos</code> and <code
+                class="language-javascript">this.vel</code> vectors. They will be updated in the <code
+                class="language-javascript">update()</code> function.<br><br></p>
+
+        <pre><code class="language-javascript">
+    update() {
+        if (!this.alive) {
+          if (this.mozzSoundOn) {
+            this.mozzSound.stop();
+          }
+          this.rotate = PI;
+          this.pos.y = lerp(this.pos.y, windowHeight, 0.1);
+          // aliveAmount --;
+        } else {
+          // mozzSound.play();
+          this.hitwall();
+          this.wingSpeed = sin(frameCount);
+          this.eyeSpeed = sin(frameCount / 10);
+          // this.wingSpeed = sin(frameCount);
+          this.randomMove();
+          // this.attract();
+          this.pos.add(this.vel);
+        }
+      }
+            </code></pre>
+
+        <p>Also, in the update function, we call the <code class="language-javascript">this.hitwall()</code> function to
+            limit the mozzies in the canvas, otherwise they will escape soon. Also we apply <code
+                class="language-javascript">this.randomMove()</code> function to make them fly freely and randomly in
+            the canvas.</p>
+
+        <pre><code class="language-javascript">
+    hitwall() {
+        if (this.pos.x > windowWidth - 50) {
+        this.pos.x = windowWidth - 50;
+        this.vel.x = -this.vel.x / 10;
+        }
+        if (this.pos.x < 0) {
+        this.pos.x = 0;
+        this.vel.x = -this.vel.x / 10;
+        }
+        if (this.pos.y > windowHeight - 50) {
+        this.pos.y = windowHeight - 50;
+        this.vel.y = -this.vel.y / 10;
+        }
+        if (this.pos.y < 0) {
+        this.pos.y = 0;
+        this.vel.y = -this.vel.y / 10;
+        }
+    }
+
+    randomMove() {
+        this.vel.add(p5.Vector.random2D().mult(0.2));
+    }
+                        </code></pre>
+        <p>After this, we will have a lot of cute mozzies flying around in our screen.
+            Don't forget to create them in the <code class="language-javascript">setup()</code> function and update them
+            in the <code class="language-javascript">draw()</code> function. <br><br>
+        </p>
+
+        <h3>Step 2. Let the computer see your hand</h3>
+        <p>In order to track hand, I use <a href="https://handsfreejs.netlify.app/" target="_blank">handsfree.js</a>.
+            <br><br>
+
+            "Handsfree.js is a JavaScript library that enables hands-free interaction with web applications by utilizing
+            computer vision and machine learning to detect facial expressions, hand gestures, and body movements," says
+            ChatGPT. <br><br>
+
+            With the help of handsfree.js, we can easily track the position of your hand and use it to catch the
+            mozzies. <br><br>
+
+            Step one is to include the handsfree.js library in your html filter. <br><br>
+
+            Then the code is simple, you just need to create a handsfree object get data from the API. <br><br>
+        </p>
+        <pre><code class="language-javascript">
+    function setup() {
+        ...
+        
+        handsfree = new Handsfree({
+            // showDebug: true,
+            hands: true,
+            maxNumHands: 1,
+            minDetectionConfidence: 0.5,
+        })
+        // handsfree.enablePlugins('browser');
+        handsfree.plugin.pinchScroll.disable();
+        ...
+        handsfree.start();
+    }
+
+    function getHandData() {
+        const handData = handsfree.data?.hands;
+        if (!handData) return;
+        handMarks = handData.multiHandLandmarks;
+        const gesture = handData.gesture?.[0];
+        if (!gesture) return;
+        prevHandGesture = handGesture;
+        handGesture = gesture.name;
+        const handmark = handMarks[0];
+        if (!handmark) return;
+        handPosition = createVector(sketch.width - handmark[9].x * sketch.width, handmark[9].y * sketch.height);
+        handSize = dist(handmark[21].x * sketch.width, handmark[21].y * sketch.height, handmark[5].x * sketch.width, handmark[5].y * sketch.height);
+        // text(handSize, 100, 100);
+      }
+      </code></pre>
+      <p>To draw the hand in a artistic way, I directly use curveVertex function to connect every landmark of the hand to simulate a comic drawing effect</p>
+      <div class="inTextImg">
+        <img src="./assets/blogs/Mozzie@2024.9.8/assets/landmarks.png" alt="hand"
+            style="width: 100%;">
+      </div>
+<pre><code class="language-javascript">
+    function drawHands() {
+        // const handData = handsfree.data?.hands;
+        if (!handMarks) return;
+      
+        //draw circle at each hand position
+        handMarks.forEach((landmark, index) => {
+      
+          firstHandmark = handMarks[0];
+      
+          let handPoints = [1, 2, 3, 4, 3, 2, 5, 6, 7, 8, 7, 6, 5, 9, 10, 11, 12, 11, 10, 9, 13, 14, 15, 16, 15, 14, 13, 17, 18, 19, 20, 19, 18, 17, 0];
+          let palmPoints = [0, 1, 5, 9, 13, 17, 0];
+          let fingerPoints = [
+            [1, 2, 3, 4],   // Thumb
+            [5, 6, 7, 8],      // Index finger
+            [9, 10, 11, 12],   // Middle finger
+            [13, 14, 15, 16],  // Ring finger
+            [17, 18, 19, 20],  // Pinky finger
+          ];
+          push();
+      
+          strokeWeight(10);
+          strokeCap(ROUND);
+          stroke(ui.DarkMode ? 200 : 0);
+          fill(ui.DarkMode ? 100 : 200);
+      
+          mappedHand = map(handPosition.x, 0, sketch.width, sketch.width / 4, sketch.width * 3 / 4);
+      
+          beginShape();
+          curveVertex(mappedHand + 50, sketch.height);
+          curveVertex(mappedHand + 50, sketch.height);
+          handPoints.forEach((index) => {
+            const point = firstHandmark[index];
+            curveVertex(sketch.width - point.x * sketch.width, point.y * sketch.height);
+          });
+          curveVertex(mappedHand - 50, sketch.height);
+          curveVertex(mappedHand - 50, sketch.height);
+          endShape();
+
+          if (ui.SeeAttackRange) {
+            push();
+            noStroke();
+            fill(255, 0, 0, 50);
+            circle(handPosition.x, handPosition.y, handSize * 2);
+            pop();
+          }
+          pop();
+        })
+      }     
+</code></pre>
+
+        <p>After this, the shape of the hand are drawn and it will follow the tracking data on the screen. <br><br>
+            With the attract function, the mozzies will be attracted to the hand. </p>  
+        <pre><code class="language-javascript">
+        class Mozzie {
+            ...
+            attract() {
+                if (!handMarks) return;
+                //get hand position
+                const handmark = handMarks[0];
+                if (!handmark) return;
+                handPosition = createVector(sketch.width - handmark[21].x * sketch.width, handmark[21].y * sketch.height);
+                let target = handPosition.copy();
+                let force = p5.Vector.sub(target, this.pos);
+                let d = force.mag();
+                force.normalize();
+                force.mult(0.1);
+                this.vel.add(force);
+                //apply friction to the object
+                this.vel.mult(0.99);
+              }
+        }
+        </code></pre>            
+
+
+
+
+
+            <p>The next step is to use the hand position to catch the mozzies. <br><br>
+            In order to use the hand position, we need to train a model to recognize the hand position and use the data
+            to catch the mozzies. <br><br>
+            In handsfree.js, we can directly train a simple model that able to recognize our gesture. <br><br>
+            Here, I have trained a catching gesture:</p>
+        <div class="inTextImg">
+            <img src="./assets/blogs/Mozzie@2024.9.8/assets/trainGesture.png" alt="catching gesture"
+                style="width: 100%;">
+        </div>
+        <p>After training the model, we can use the gesture data to catch the mozzies.</p>
+        <pre><code class="language-javascript">
+function killMoz() {
+  // console.log(handGesture);
+  if (handGesture == "kill" && prevHandGesture != "kill") {
+    for (i = 0; i < amount; i++) {
+      if (mozz[i].pos.dist(handPosition) < handSize && mozz[i].alive) {
+        mozz[i].alive = false;
+        // mozz.splice(i, 1);
+        aliveAmount--;
+      }
+      else if (mozz[i].pos.dist(handPosition) < handSize * 4 && mozz[i].alive) {
+
+        mozz[i].vel.add(p5.Vector.sub(mozz[i].pos, handPosition).mult(0.3));
+      }
+    }
+  }
+}
+
+    </code></pre>
+
+        <p>Here, you can see if you miss the mozzie, it will escape by appliying a reversal vector to it's velocity. <br><br>
+            
+            After applying these code, you can catch the mozzies with your hand. <br><br>
+            The last step is to add some sound effects and control panel to the game. <br><br>
+            The sound effects are simple, you can use the <code class="language-javascript">createAudio()</code>
+            function to create a sound object and play it when the mozzies are generated. <br><br>
+            I use the dat.gui library to create a control panel. You can use the control panel to turn on/off the sound
+            effects and see the attack range of your hand. <br><br>
+        </p>
+
+        <h2>Reflection</h2>
+        <p>In this project, I explored the handsfree.js library and successfully used it to create an interactive mini game. <br><br>
+            However, there are still some limitations in the project. For example, the hand tracking is not very accurate for the right hand and the mozzies are not very smart. <br><br>
+            But overall, I'm already quite satisfied with the result.<br><br>
+
+            Especially after the player turns on the sound effects.</p>
+            
+        <h2>Links</h2>
+        <p>See original code: <a href="https://editor.p5js.org/Hyperillion/sketches/XPoaLgeeT" target="_blank">p5js Project Link</a><br></p>
+
+
+
+
 
     </div>
 
