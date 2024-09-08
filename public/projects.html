@@ -101,7 +101,8 @@
         </div>
         <div class="timeline">
             <div class="item" data-text="July 2024">
-                <button class="showPopup" onclick="displayPopup('./assets/pics/projects/gaudi-vision/gaudi-vision.html')">
+                <button class="showPopup"
+                    onclick="displayPopup('./assets/pics/projects/gaudi-vision/gaudi-vision.html')">
                     <div class="content">
                         <img src="assets/pics/projects/gaudi-vision/gaudi-vision.jpg" alt="" class="pjktimg">
                         <h2 class="contentTitle" style="font-family: dotCN;">高迪视界</h2>
@@ -249,10 +250,21 @@
             </tbody>
         </table>
     </div>
+    <div class="loadingBG">
+        <img class="loadingBar" src="assets/pics/loading-bars.svg" alt="Loading icon" />
+    </div>
 
     <script src="lightbox/dist/js/lightbox-plus-jquery.js"></script>
     <script src="//unpkg.com/layui@2.9.16/dist/layui.js"></script>
     <script>
+        window.onload = function() {
+            document.querySelector('.loadingBG').style.display = 'none';
+        };
+        // else {
+        //     window.addEventListener('load', function () {
+        //         document.querySelector('.loadingBar').style.display = 'none';
+        //     });
+        // }
         //change the background image of the shell
         (function ($) {
             $.fn.timeline = function () {

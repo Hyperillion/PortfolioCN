@@ -479,7 +479,7 @@ body {
 .contentTitle{
 	font-family: Technology;
 	font-weight: 500;
-	font-size: 50px;
+	/* font-size: 50px; */
 	margin: -50px 0 0 0;
 	transition: 0.4s;
 	padding: 20px 10px 0px 10px;
@@ -487,10 +487,29 @@ body {
 	color:#F0F0F0;
 }
 
+.loadingBG{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: #000000bb;
+	z-index: 99999;
+}
+
+.loadingBar{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	/* width: 100%; */
+	z-index: 999999;
+}
+
 .description{
 	margin: 0;
 	margin-top: 20px;
-	font-size: 18px;
+	font-size: 15px;
 	box-sizing: border-box;
 	color: #F0F0F0;
 	line-height: 25px;
