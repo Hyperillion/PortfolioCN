@@ -299,7 +299,7 @@ function generateMozz() {
   if (random(1) < 0.005 && aliveAmount < 5) {
     mozz.push(
       new Mozzie(
-        random(windowWidth),
+        random(-windowWidth/2, windowWidth*1.5),
         random(windowHeight),
         random(1, 2)
       ));
@@ -334,7 +334,7 @@ function killMoz() {
       }
       else if (mozz[i].pos.dist(handPosition) < handSize * 4 && mozz[i].alive) {
 
-        mozz[i].vel.add(p5.Vector.sub(mozz[i].pos, handPosition).mult(0.3));
+        mozz[i].vel.add(p5.Vector.sub(mozz[i].pos, handPosition).mult(0.1));
       }
     }
   }
@@ -378,7 +378,7 @@ function drawHands() {
     //   // circle(sketch.width - point.x * sketch.width, point.y * sketch.height, 10);
     //   circle(sketch.width - point.x * sketch.width, point.y * sketch.height, 20);
     // });
-
+    // console.log(handPosition);
     mappedHand = map(handPosition.x, 0, sketch.width, sketch.width / 4, sketch.width * 3 / 4);
 
     beginShape();
@@ -628,7 +628,7 @@ class Mozzie {
       // aliveAmount --;
     } else {
       // mozzSound.play();
-      this.hitwall();
+      // this.hitwall();
       this.wingSpeed = sin(frameCount);
       this.eyeSpeed = sin(frameCount / 10);
       // this.wingSpeed = sin(frameCount);
