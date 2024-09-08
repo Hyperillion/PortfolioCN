@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Interactive Drawing</title>
+  <meta charset="utf-8">
+  <link href="//unpkg.com/layui@2.9.16/dist/css/layui.css" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #000000;
+      color: #f0f0f0;
+      padding: 20px;
+      text-align: left;
+    }
+
+    h1 {
+      margin: 5% 0;
+      color: #f0f0f0;
+      font-weight: 100;
+    }
+
+    h1 span {
+      font-weight: 100;
+    }
+
+    h2 {
+      margin: 7% 0 4% 0;
+      font-size: 40px;
+      font-family: dotCN;
+      font-weight: 100;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+
+    .popupBox {
+      color: #fff;
+      margin: 5% 10%;
+      border-radius: 5px;
+    }
+
+    .layui-layer {
+      background: rgba(5, 5, 5, 0.9);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="popupBox">
+    <h1><span style="font-family: dotCN;">Interactive Drawing |</span> 交互绘图项目</h1>
+    <div class="layui-carousel" id="test1" style="background-color:#000;">
+      <div carousel-item>
+        <div><iframe src="./assets/pics/projects/webSketchpad/ProjectFolder/index.html" width="100%" height="100%" allowfullscreen="true" frameborder="no"></iframe></div>
+        <div><img src="./assets/pics/projects/webSketchpad/sketchpad.jpg"></div>
+      </div>
+    </div>
+
+    <h2>项目简介</h2>
+    <p>
+      #Interactive Drawing, Online Sketchpad, Creative Coding  
+      <br><br>
+      本项目是一个交互式在线绘图板，提供多种基本绘图功能，如铅笔绘图、钢笔绘图、荧光笔绘图等，并支持预设颜色和自定义颜色。此外，工具功能还包括橡皮擦、尺子、三角形绘制以及画布清除功能。通过UI设计和交互体验，用户可以轻松体验不同的绘图工具。
+    </p>
+
+    <h2>功能</h2>
+    <p>
+      · 铅笔绘图：可使用鼠标绘制均匀的线条。<br>
+      · 钢笔绘图：根据鼠标移动速度，绘制粗细不一的线条。<br>
+      · 荧光笔绘图：绘制较粗的均匀线条。<br>
+      · 预设颜色：提供多种预设颜色（如橙色、黄色、绿色等）。<br>
+      · 自定义颜色：支持输入HEX色码，绘制任意颜色。<br>
+      · 橡皮擦：擦除已绘制的内容。<br>
+      · 尺子：通过点击两个点绘制直线。<br>
+      · 三角形：通过点击三个点绘制三角形。<br>
+      · 清除画布：单击清除画布上的所有内容。
+    </p>
+
+    <h2>特色功能</h2>
+    <p>
+      · 交互体验：鼠标悬停在按钮上时，按钮颜色反转提示用户可点击；选择某个功能后，其他功能会自动取消选择，并为选中的按钮添加黑色边框。<br><br>
+      · 自定义颜色：用户可以通过输入HEX色码自定义绘图颜色，增加灵活性和个性化。<br>
+    </p>
+
+    <h2>代码分析</h2>
+    <p>
+      · 功能选择：通过布尔值切换选中状态，当某个功能被选中时，其他功能自动取消。<br><br>
+      · 自定义颜色：利用 `prompt()` 让用户输入颜色代码，并通过参数存储颜色信息。如果用户点击“取消”，会触发循环提示，直到输入有效颜色代码。<br><br>
+      · 按钮交互提示：通过 `if` 语句检测鼠标是否在按钮上方，若是则反转按钮颜色以提示用户可点击。
+    </p>
+
+    <h2>未来更新</h2>
+    <p>
+      · 添加贴纸和表情笔刷功能<br>
+      · 支持调整笔刷粗细<br>
+      · 实现透明荧光笔功能
+    </p>
+
+    <h2>项目作者</h2>
+    <p>叶进然 | 创作者</p>
+
+    <h2>更多信息</h2>
+    <p>
+        <a href="https://editor.p5js.org/Hyperillion/sketches/m8W-EHeL5" target="_blank">查看完整代码</a><br>
+        <a href="https://wp.nyu.edu/andyhyperillion/2022/02/21/mini-project2-p5js-web-sketchpad/" target="_blank">项目技术分享博客</a><br>
+    </p>
+
+  </div>
+
+  <script src="//unpkg.com/layui@2.9.16/dist/layui.js"></script>
+  <script>
+    layui.use('carousel', function () {
+      var carousel = layui.carousel;
+      //建造实例
+      carousel.render({
+        elem: '#test1'
+        , width: '100%' //设置容器宽度
+        , height: '70vh'
+        , arrow: 'always' //始终显示箭头
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Imaging</title>
+  <meta charset="utf-8">
+  <link href="//unpkg.com/layui@2.9.16/dist/css/layui.css" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #000000;
+      color: #f0f0f0;
+      padding: 20px;
+      text-align: left;
+    }
+
+    h1 {
+      margin: 5% 0;
+      color: #f0f0f0;
+      font-weight: 100;
+    }
+
+    h1 span {
+      font-weight: 100;
+    }
+
+    h2 {
+      margin: 7% 0 4% 0;
+      font-size: 40px;
+      font-family: dotCN;
+      font-weight: 100;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+
+    .popupBox {
+      color: #fff;
+      margin: 5% 10%;
+      border-radius: 5px;
+    }
+
+    .layui-layer {
+      background: rgba(5, 5, 5, 0.9);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="popupBox">
+    <h1><span style="font-family: dotCN;">映像 |</span> Imaging</h1>
+    <div class="layui-carousel" id="test1" style="background-color:#000;">
+      <div carousel-item>
+
+        <div><img src="./assets/pics/projects/imaging/imaging.png"></div>
+      </div>
+    </div>
+    <h2>项目简介</h2>
+    <p>
+        #HTML, CSS, JS, p5js, Web Deployment, Grid-layout, Photography Simulator
+      <br><br>
+      Imaging 项目探索了摄影的整个过程，通过音乐和环境音效，观众能够体验到从开启相机、构图、设定曝光值到按下快门的全过程。这个项目不仅仅展示图像本身，而是强调摄影背后的创作过程，邀请观众参与并保存他们的图像作品。
+    </p>
+
+    <h2>形式</h2>
+    <p>交互式摄影体验，结合声音和画廊展示</p>
+
+    <h2>概念</h2>
+    <p>
+      "Imaging" 不仅仅是生成图像的过程，它还涉及到观众通过摄影展开的想象。项目灵感来自朋友的一次提问：为什么我总是坚持使用手动模式进行拍摄？这个问题让我意识到许多人不了解摄影的真正魅力。这个项目让观众通过亲身体验摄影的每个步骤，理解其中的乐趣与创作背后的深层思考。
+    </p>
+
+    <h2>项目亮点</h2>
+    <p>
+      · 沉浸式体验: 通过音乐、环境音效和摄影的完整过程，带领观众走入摄影师的世界，感受拍摄时的专注与思考。<br><br>
+      · 手动参数调整: 观众可以体验摄影中曝光、焦点等参数的调整，感受专业相机与智能手机拍照的区别。<br><br>
+      · 个人画廊: 完成拍摄后，观众可在画廊中观赏摄影作品，享受独处时与图像的对话。
+    </p>
+
+    <h2>项目背景</h2>
+    <p>
+      随着智能手机摄影的普及，越来越少的人会思考摄影背后的复杂性与手动控制的意义。这个项目旨在通过交互式体验，帮助观众理解为什么专业摄影师愿意携带沉重的设备拍摄，体验摄影中的创作自由与表达方式。
+    </p>
+
+    <h2>展览设计</h2>
+    <p>
+      项目展示分为两部分：首先是交互式摄影体验，通过模拟相机，观众可以调整焦距、曝光值，拍摄雪山或海边的场景，享受亲自创作的乐趣。接着，观众进入画廊，观看他们保存的图像，与作品进行深度交流和反思。
+    </p>
+
+    <p>叶进然 | 创作者</p>
+
+  </div>
+
+  <script src="//unpkg.com/layui@2.9.16/dist/layui.js"></script>
+  <script>
+    layui.use('carousel', function () {
+      var carousel = layui.carousel;
+      //建造实例
+      carousel.render({
+        elem: '#test1'
+        , width: '100%' //设置容器宽度
+        , height: '50vh'
+        , arrow: 'always' //始终显示箭头
+      });
+    });
+  </script>
+</body>
+
+</html>

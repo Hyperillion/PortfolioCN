@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CureMonster</title>
+    <meta charset="utf-8">
+    <link href="//unpkg.com/layui@2.9.16/dist/css/layui.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #000000;
+            color: #f0f0f0;
+            padding: 20px;
+            text-align: left;
+        }
+
+        h1 {
+            margin: 5% 0;
+            color: #f0f0f0;
+            font-weight: 100;
+        }
+
+        h1 span {
+            font-weight: 100;
+        }
+
+        h2 {
+            margin: 7% 0 4% 0;
+            font-size: 40px;
+            font-family: dotCN;
+            font-weight: 100;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        p {
+            line-height: 1.5;
+        }
+
+        .popupBox {
+            color: #fff;
+            margin: 5% 10%;
+            border-radius: 5px;
+        }
+
+        .layui-layer {
+            background: rgba(5, 5, 5, 0.9);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="popupBox">
+        <h1><span style="font-family: dotCN;">门 |</span> Leave the Door Open</h1>
+        <div class="layui-carousel" id="test1" style="background-color:#000;">
+            <div carousel-item>
+                <div><iframe src="//player.bilibili.com/player.html?bvid=BV1bR4y1n7rL&;page=1" width="100%"
+                        height="100%" allowfullscreen="true" frameborder="no"> </iframe></div>
+                <div><img src="./assets/pics/projects/leaveTheDoorOpen/ldto.jpg"></div>
+            </div>
+        </div>
+
+        <h2>项目简介</h2>
+        <p>
+            剧情微电影。 一扇半掩着的，通向光亮的门——这是叶进然团队抽取的限时创作元素。团队选择用“门”比喻人际关系，特指朦胧校园爱情的萌芽。影片中，男孩遇见女孩，两人都踏出自己的舒适区，敞开心扉，拥抱生活。</p>
+
+        <h2>评委点评</h2>
+        <p>交互媒体艺术助理教授盘薇娴：“影片巧妙地运用不同的‘门’来呈现不同角色，让他们的人生轨迹交迭，或是坠入爱河。运镜十分完美，灯光、音效等场景间统一性也很不错。影片讲述的故事引人入胜。”
+        </p>
+
+        <h2>荣誉</h2>
+        <p>One in 24 电影大赛 | 第三名</p>
+
+        <h2>项目团队</h2>
+        <p>叶进然 | 导演、摄影、剪辑</p>
+        <p>林长昊 | 主演</p>
+        <p>温蕙玮 | 主演</p>
+        <p>吴昊桐 | 编剧</p>
+
+        <h2>更多信息</h2>
+        <p>
+            <a href="https://shanghai.nyu.edu/cn/is/winners-announced-nyu-shanghai-one-24-film-race"
+                target="_blank">活动采访</a>
+        </p>
+    </div>
+
+    <script src="//unpkg.com/layui@2.9.16/dist/layui.js"></script>
+    <script>
+        layui.use('carousel', function () {
+            var carousel = layui.carousel;
+            carousel.render({
+                elem: '#test1',
+                width: '100%',
+                height: '50vh',
+                arrow: 'always'
+            });
+        });
+    </script>
+</body>
+
+</html>

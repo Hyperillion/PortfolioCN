@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>LIFE: From small To BIG</title>
+  <meta charset="utf-8">
+  <link href="//unpkg.com/layui@2.9.16/dist/css/layui.css" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #000000;
+      color: #f0f0f0;
+      padding: 20px;
+      text-align: left;
+    }
+
+    h1 {
+      margin: 5% 0;
+      color: #f0f0f0;
+      font-weight: 100;
+    }
+
+    h1 span {
+      font-weight: 100;
+    }
+
+    h2 {
+      margin: 7% 0 4% 0;
+      font-size: 40px;
+      font-family: dotCN;
+      font-weight: 100;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+
+    .popupBox {
+      color: #fff;
+      margin: 5% 10%;
+      border-radius: 5px;
+    }
+
+    .layui-layer {
+      background: rgba(5, 5, 5, 0.9);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="popupBox">
+    <h1><span style="font-family: dotCN;">生 以小及大</span></h1>
+    <div class="layui-carousel" id="test1" style="background-color:#000;">
+      <div carousel-item>
+        <div><img src="./assets/pics/projects//life/LIFE.png"></div>
+      </div>
+    </div>
+    <h2>项目简介</h2>
+    <p>
+      #Creative Coding, Cells, Life Cycle  
+      <br><br>
+      LIFE 是一个互动编程艺术作品，展示了细胞从诞生、分裂到死亡的生命全过程。细胞从生成时的脆弱与好奇，到繁殖的过程，再到因缺乏养分或老化而消亡。通过体验细胞的生命历程，观众可以思考生命与人类生存的相似之处，尤其是在后疫情时代。艺术作品借此探讨了“权力掌控者”和“个体”的关系，邀请观众体验作为“权力掌控者”的角度。
+    </p>
+
+    <h2>形式</h2>
+    <p>互动编程艺术作品</p>
+
+    <h2>概念</h2>
+    <p>
+      LIFE 项目通过细胞的生命周期来隐喻人类的生命历程。在后疫情背景下，许多人因缺乏关注而失去生命。作品不仅展示了细胞的生命过程，也通过互动编程，引发观众对生命、个体和权力结构的进一步思考。<br><br>
+      LIFE 项目结合了生物学与社会学的视角，探讨了生命过程与权力的隐喻关系。尤其是在后疫情时期，许多生命因缺乏关注而逝去，LIFE 通过细胞的生命周期，反映了个体在庞大社会结构下的无力感与脆弱性。
+    </p>
+
+    <h2>项目亮点</h2>
+    <p>
+      · 三阶段细胞生命周期展示: 从细胞诞生、分裂到死亡，完整呈现生命过程。<br><br>
+      · 后疫情反思: 探讨个体在大规模社会结构中的脆弱性，尤其是权力掌控者对生命的影响。<br><br>
+      · 互动模式: 用户可以通过操作，体验掌控和观察细胞生存与死亡的过程，强化对生命的感知。
+    </p>
+
+    <h2>技术亮点</h2>
+    <p>
+        · 基于向量的运动控制: 项目中细胞的运动是通过向量（vector）控制实现的。与简单的X、Y轴坐标移动不同，向量控制让细胞可以朝目标位置平滑地移动，解决了常见的非连续运动问题，确保视觉效果更加流畅自然。<br><br>
+        · 自动目标追踪机制: 细胞通过算法计算自己与食物（DNA）之间的距离，并自动选择最近的食物作为追踪目标。这个算法使用了多层嵌套的数组和条件判断，确保每个细胞能迅速找到目标，并精确移动到目标位置。<br><br>
+        · 细胞分裂机制: 当细胞达到一定的生命时长并获取足够食物后，用户可以点击细胞触发其分裂。分裂机制通过消除当前细胞并生成两个新的细胞实现，同时保留原始细胞的位置和运动轨迹，形成流畅的分裂效果。<br><br>    
+        · 使用类进行OOP编程：该项目使用面向对象编程（OOP）技术，通过类（class）来定义细胞、DNA等元素的行为和属性。通过创建多个实例，简化了代码结构并增强了代码的可扩展性和复用性，使得各个元素的行为可以被独立管理，便于进一步开发和维护
+    </p>
+
+    <h2>交互设计</h2>
+    <p>
+      项目通过编码展示了细胞的动态过程。用户可以点击细胞来促使其分裂，或观察其因为缺乏养分而逐渐消亡。背景颜色会随着用户鼠标位置的移动发生渐变，增强了视觉互动体验。
+    </p>
+
+    <h2>项目作者</h2>
+    <p>叶进然 | 创作者</p>
+
+    <h2>更多信息</h2>
+    <p>
+        <a href="https://wp.nyu.edu/andyhyperillion/2022/04/02/refletion-of-project-a-life-from-small-to-big/">项目技术分享博客</a>
+    </p>
+  </div>
+
+  <script src="//unpkg.com/layui@2.9.16/dist/layui.js"></script>
+  <script>
+    layui.use('carousel', function () {
+      var carousel = layui.carousel;
+      //建造实例
+      carousel.render({
+        elem: '#test1'
+        , width: '100%' //设置容器宽度
+        , height: '50vh'
+        , arrow: 'always' //始终显示箭头
+      });
+    });
+  </script>
+</body>
+
+</html>
