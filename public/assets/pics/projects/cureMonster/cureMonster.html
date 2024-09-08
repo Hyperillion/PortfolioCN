@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CureMonster</title>
+  <meta charset="utf-8">
+  <link href="//unpkg.com/layui@2.9.16/dist/css/layui.css" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #000000;
+      color: #f0f0f0;
+      padding: 20px;
+      text-align: left;
+    }
+
+    h1 {
+      margin: 5% 0;
+      color: #f0f0f0;
+      font-weight: 100;
+    }
+
+    h1 span {
+      font-weight: 100;
+    }
+
+    h2 {
+      margin: 7% 0 4% 0;
+      font-size: 40px;
+      font-family: dotCN;
+      font-weight: 100;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+
+    .popupBox {
+      color: #fff;
+      margin: 5% 10%;
+      border-radius: 5px;
+    }
+
+    .layui-layer {
+      background: rgba(5, 5, 5, 0.9);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="popupBox">
+    <h1>CureMonster - Social Companion Robot</h1>
+    <div class="layui-carousel" id="test1" style="background-color:#000;">
+      <div carousel-item>
+        <div><img src="./assets/pics/projects/cureMonster/curemonster.png"></div>
+      </div>
+    </div>
+
+    <h2>项目简介</h2>
+    <p>
+      CureMonster 是一个社交陪伴机器人项目，旨在帮助自闭症儿童满足社交需求。机器人通过触摸传感器、显示屏和伺服电机与用户进行互动，提供情感陪伴与互动体验。我们通过人机交互设计，使机器人不仅能模拟复杂的情感表达，还能增强用户的心理健康。
+      <br><br>
+        CureMonster 通过特定的互动设计，减少其对社交互动的焦虑感。机器人能够通过轻微的触摸反馈和简单的表情变化，提供一种安全、温和的社交互动方式，帮助自闭症儿童逐步适应与他人互动的情境。
+    </p>
+
+    <h2>技术实现</h2>
+    <p>
+      本项目使用Raspberry Pi RP2040微控制器，整合触摸传感器、伺服电机和1.28英寸圆形LCD显示屏来实现机器人与用户的互动。通过MicroPython编程，机器人可以根据不同的触摸反馈改变表情，包括眨眼、哭泣和头部移动等动作。
+      <br><br>
+      使用PWM控制伺服电机，实现了机器人手臂的动态互动。供电部分使用18650电池，并配备无线充电功能，确保机器人可以持续运行。
+    </p>
+
+    <h2>设计与结构</h2>
+    <p>
+      机器人外观采用毛绒玩具的形式，结合圆形LCD屏幕作为眼睛，呈现出可爱且治愈的形象。内置硬件通过多层丙烯酸板和铜柱固定，保证了机器人结构的稳定性。头部和手臂的运动由伺服电机控制，而电池被巧妙地安置在机器人底部以确保重心平衡。
+    </p>
+
+    <h2>项目意义</h2>
+    <p>
+      CureMonster 的设计不仅是为了科技陪伴，更是为了给用户带来情感上的温暖。通过其独特的互动形式，帮助用户缓解孤独感并提升生活幸福感。它的社会意义在于提醒人们重视心理健康问题，尤其是为自闭症儿童设计的温和互动功能，能够帮助他们逐步适应社交环境，促进情感健康。
+    </p>
+
+    <h2>项目团队</h2>
+    <p>叶进然 | 编码、硬件设计、互动设计、项目管理</p>
+    <p>Ambra Liu | 视觉设计、外观设计</p>
+  </div>
+
+  <script src="//unpkg.com/layui@2.9.16/dist/layui.js"></script>
+  <script>
+    layui.use('carousel', function () {
+      var carousel = layui.carousel;
+      carousel.render({
+        elem: '#test1',
+        width: '80%',
+        height: '80vh',
+        arrow: 'always'
+      });
+    });
+  </script>
+</body>
+
+</html>
