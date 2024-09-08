@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Gaudi Vision</title>
+    <meta charset="utf-8">
+    <!-- <title>carousel模块快速使用</title> -->
+    <link href="//unpkg.com/layui@2.9.16/dist/css/layui.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            /* font-family: Arial, sans-serif; */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #000000;
+            color: #f0f0f0;
+            padding: 20px;
+            text-align: left;
+        }
+
+        h1 {
+            margin: 5% 0;
+            color: #f0f0f0;
+            font-weight: 100;
+        }
+
+        h1 span {
+            /* color: #f1c40f; */
+            font-weight: 100;
+        }
+
+        h2 {
+            margin: 7% 0 4% 0;
+            font-size: 40px;
+            font-family: dotCN;
+            font-weight: 100;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            /* margin-bottom: 20px; */
+        }
+
+        p {
+            line-height: 1.5;
+        }
+
+        .popupBox {
+            color: #fff;
+            margin: 5% 10%;
+            border-radius: 5px;
+        }
+
+        .layui-layer {
+            background: rgba(5, 5, 5, 0.9);
+        }
+
+        .layui-btn {
+            background-color: #0f0f0f;
+            color: #f0f0f0;
+            border-color: #f0f0f0;
+        }
+
+        .layui-btn:hover {
+            background-color: #fff;
+            color: #0f0f0f;
+            border-color: #f0f0f0;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="popupBox">
+        <h1>Get Away Mozzie<span style="font-family: dotCN;"> | 蚊子快跑</span> </h1>
+        <div class="layui-carousel" id="test1" style="background-color:#000 ;">
+            <div carousel-item>
+                <iframe class="p5PJKT" src="./assets/blogs/Mozzie@2024.9.8/assets/cover.html" width="100%" height="100%"
+                    allowfullscreen="true" frameborder="no"> </iframe>
+            </div>
+        </div>
+
+        <button class="layui-btn" onclick="startStop()">START/STOP</button>
+
+        <h2>How to Play</h2>
+        <p><b>Step 1:</b>  Find a place that is bright enough with a clear background. <br>
+            <b>Step 2:</b> Click the "START/STOP" button to start the game. <br>
+            OR <a href="./assets/blogs/Mozzie@2024.9.8/ProjectFolder/index.html" target="_blank">Play in Full Screen</a> <br>
+            <b>Step 3:</b> Use your LEFT hand to catch all the mosquitoes. <br>
+            <b>Step 4:</b> Enjoy! (Though probably not, especially with the sound on) :P
+        </p>
+        
+        <h2>Useful Hints</h2>
+        <p><b>1.</b> A plain-colored background improves hand recognition. <br>
+            <b>2.</b> Try to use the center of your palm to catch the mosquitoes. <br>
+            <b>3.</b> If you miss a mosquito, it will escape. <br>
+            <b>4.</b> A good strategy is to keep your hand still and wait the mosquitoes to come.<br>
+            <b>5.</b> Annoyed by the sound? You can turn it off in the Control Panel.</p>
+
+        <h2>Idea</h2>
+        <p>The idea of this project is simple: kill all the mosquitoes.</p>
+
+    </div>
+
+
+    <script src="//unpkg.com/layui@2.9.16/dist/layui.js"></script>
+    <script>
+        var p5Playing = false;
+        function startStop() {
+            if (p5Playing) {
+                document.querySelector('.p5PJKT').src = "./assets/blogs/Mozzie@2024.9.8/assets/cover.html";
+                p5Playing = false;
+            } else {
+                document.querySelector('.p5PJKT').src = "./assets/blogs/Mozzie@2024.9.8/ProjectFolder/index.html";
+                p5Playing = true;
+            }
+        }
+
+        layui.use('carousel', function () {
+            var carousel = layui.carousel;
+            //建造实例
+            carousel.render({
+                elem: '#test1'
+                , width: '100%' //设置容器宽度
+                , height: '60vh'
+                , arrow: 'always' //始终显示箭头
+                //,anim: 'updown' //切换动画方式
+            });
+        });
+    </script>
+</body>
+
+</html>

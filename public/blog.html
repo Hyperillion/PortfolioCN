@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Hyperillion</title>
+    <link rel="icon" type="image/x-icon" href="/assets/cur/AY.ico">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Smooch+Sans:wght@200;500;700&family=Yellowtail&display=swap"
+        rel="stylesheet"> -->
+    <link rel="stylesheet" href="style.css">
+    <link href="assets/Family/font.css" rel="stylesheet" type="text/css">
+    <link href="lightbox/dist/css/lightbox.css" rel="stylesheet" />
+    <link href="//unpkg.com/layui@2.9.16/dist/css/layui.css" rel="stylesheet">
+    <style>
+        .lightbox {
+            width: 100%;
+            overflow-x: scroll;
+        }
+
+        .item button:hover {
+            text-decoration: none;
+            cursor: pointer;
+            color: #000000;
+        }
+
+        .item button:hover .description {
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            /* color: #000000; */
+            /* background-color: #f0f0f0; */
+            cursor: pointer;
+        }
+
+        .item button:hover .contentTitle {
+            color: #f0f0f0;
+            text-shadow:
+                0 0 10px #f0f0f0,
+                0 0 20px #f0f0f0;
+            cursor: pointer;
+        }
+
+        #image-display {
+            position: fixed;
+            margin: 5%;
+            /* transform: translateY(-10%); */
+            max-width: 60%;
+            max-height: 30%;
+            height: auto;
+            z-index: 1000;
+        }
+
+        #right-image {
+            width: 100%;
+            height: auto;
+            display: none;
+        }
+
+        #project_description {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background-color: #f0f0f0;
+            z-index: 1000;
+            overflow-y: scroll;
+            padding: 5%;
+        }
+
+        .detail {
+            display: none;
+        }
+
+        .showPopup {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            text-align: left;
+        }
+
+        .layui-layer {
+            background: rgba(5, 5, 5, 0.9);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="shell" id="shell">
+        <div class="header">
+            <h1 class="title"><span>Blog</span></h1>
+            <h1 class="title">Post</h1>
+        </div>
+        <div class="timeline">
+            <!-- <div class="item" data-text="Sept 2024">
+                <button class="showPopup"
+                    onclick="displayPopup('./assets/pics/projects/gaudi-vision/gaudi-vision.html')">
+                    <div class="content">
+                        <img src="assets/pics/projects/gaudi-vision/gaudi-vision.jpg" alt="" class="pjktimg">
+                        <h2 class="contentTitle">Live-Diffusion</h2>
+                        <p class="description">交互式AI图像转绘系统。项目利用Diffusion和Lora模型，将用户上传的建筑图片实时转换为高迪风格的艺术作品。</p>
+                    </div>
+                </button>
+            </div> -->
+            <div class="item" data-text="2024.9.8 23:48">
+                <button class="showPopup"
+                    onclick="displayPopup('./assets/blogs/Mozzie@2024.9.8/Mozzie.html')">
+                    <div class="content">
+                        <img src="assets/blogs/Mozzie@2024.9.8/assets/Cover.png" alt="" class="pjktimg">
+                        <h2 class="contentTitle">Get Away Mozzie</h2>
+                        <p class="description">An interactive p5 project to kill mosquitoes</p>
+                    </div>
+                </button>
+            </div>
+            <div class="item" data-text="May 2023">
+                <button class="showPopup"
+                    onclick="displayPopup('./assets/pics/projects/beyondInkwash/beyondInkwash.html')">
+                    <div class="content">
+                        <img src="assets/pics/projects/beyondInkwash/beyondInkwash.png" alt="" class="pjktimg">
+                        <h2 class="contentTitle" style="font-family: dotCN;">水墨之外</h2>
+                        <p class="description">交互艺术项目。将中国传统水墨画与现代编程技术相结合，用户可以通过传感器和音频输入实时生成独特的水墨画作，探索传统与现代科技的融合。</p>
+                    </div>
+                </button>
+            </div>
+            <div class="item" data-text="February 2023">
+                <button class="showPopup" onclick="displayPopup('./assets/pics/projects/galaxy/galaxy.html')">
+                    <div class="content">
+                        <img src="assets/pics/projects/galaxy/galaxy.png" alt="" class="pjktimg">
+                        <h2 class="contentTitle" style="font-family: dotCN;">银河</h2>
+                        <p class="description">交互艺术项目。以宇宙为灵感，通过代码模拟星空的闪烁以及黑洞的神秘，体验万有引力定律在虚拟世界中的呈现。</p>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Div to display the active image on the right side -->
+    <!-- <div id="project_description">
+        <div id="project_description_text">
+            <div id="image-display">
+                <img id="right-image" src="assets/pics/backpic.jpg" alt="Displayed Image">
+            </div>
+            <h1>Project Description</h1>
+            <p id="project_description_content">AIGC redrawing system to transform user-uploaded images into stunning
+                Gaudi-style architectural pieces</p>
+        </div> 
+    </div>
+     -->
+    <div class="nav_bar">
+        <div class="logo">
+            <a href="index.html">
+                <div id="logo_text2"><span>A</span>ndy</div>
+                <div>YeJR</div>
+            </a>
+        </div>
+        <table class="nav_table" width="100%" border="0">
+            <tbody>
+                <tr>
+                    <th class="nav_element" scope="col"><a href="blog.html">Blog</a></th>
+                    <th class="nav_element" scope="col"><a href="projects.html">Projects</a></th>
+                    <th class="nav_element" scope="col"><a href="photos.html">Photos</a></th>
+                    <th class="nav_element" scope="col"><a href="index.html">About Me</a></th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="loadingBG">
+        <img class="loadingBar" src="assets/pics/loading-bars.svg" alt="Loading icon" />
+    </div>
+
+    <div class="mobile-overlay">
+        <p class="mobile-overlay-hint">请使用电脑访问此页面，以获得更佳的体验。</p>
+    </div>
+
+    <script src="lightbox/dist/js/lightbox-plus-jquery.js"></script>
+    <script src="//unpkg.com/layui@2.9.16/dist/layui.js"></script>
+    <script>
+        const isMobile = window.innerWidth < 768;
+        if (isMobile) {
+            // document.querySelector('.shell').style.display = 'none';
+            document.querySelector('.mobile-overlay').style.display = 'block';
+        }
+
+
+        window.onload = function () {
+            document.querySelector('.loadingBG').style.display = 'none';
+        };
+
+
+
+
+        // else {
+        //     window.addEventListener('load', function () {
+        //         document.querySelector('.loadingBar').style.display = 'none';
+        //     });
+        // }
+        //change the background image of the shell
+        (function ($) {
+            $.fn.timeline = function () {
+                var selectors = {
+                    id: $(this),
+                    item: $(this).find(".item"),
+                    activeClass: "item--active",
+                    img: ".pjktimg"
+                };
+                selectors.item.eq(0).addClass(selectors.activeClass);
+                selectors.id.css(
+                    "background-image",
+                    "url(assets/pics/backpic.jpg)"
+                );
+                var itemLength = selectors.item.length;
+                $(window).scroll(function () {
+                    var max, min;
+                    var pos = $(this).scrollTop() + $(this).height() / 3;
+                    selectors.item.each(function (i) {
+                        min = $(this).offset().top;
+                        max = $(this).height() + $(this).offset().top;
+                        var that = $(this);
+                        if (i == 0 && pos >= $(this).height() / 1.5 && pos < $(this).height() * 2) {
+                            selectors.id.css(
+                                "background-image",
+                                "url(" +
+                                $(this)
+                                    .find(selectors.img)
+                                    .attr("src") +
+                                ")"
+                            );
+                            selectors.item.removeClass(selectors.activeClass);
+                            $(this).addClass(selectors.activeClass);
+                        } else if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
+                            selectors.item.removeClass(selectors.activeClass);
+                            selectors.id.css(
+                                "background-image",
+                                "url(" +
+                                selectors.item.last()
+                                    .find(selectors.img)
+                                    .attr("src") +
+                                ")"
+                            );
+                            selectors.item.last().addClass(selectors.activeClass);
+                        }
+
+                        else if (pos <= max - 10 && pos >= min) {
+                            selectors.id.css(
+                                "background-image",
+                                "url(" +
+                                $(this)
+                                    .find(selectors.img)
+                                    .attr("src") +
+                                ")"
+                            );
+                            selectors.item.removeClass(selectors.activeClass);
+                            $(this).addClass(selectors.activeClass);
+                        } else if (pos < $(this).height() / 0.8) {
+                            selectors.id.css(
+                                "background-image",
+                                "url(assets/pics/backpic.jpg)"
+                            );
+                            selectors.item.removeClass(selectors.activeClass);
+                        }
+                    })
+                })
+            }
+        })(jQuery)
+
+        $("#shell").timeline();
+
+
+        let popupHTML = '<div>fetch error</div>';
+        let havePoped = false;
+        if (havePoped === false) {
+            function displayPopup(targeturl) {
+                havePoped = true;
+                loadHTML(targeturl).then(() => {
+                    layui.use(function () {
+                        var layer = layui.layer;
+                        var util = layui.util;
+                        var $ = layui.$;
+
+                        layer.open({
+                            type: 1,
+                            title: false,
+                            offset: 'r',
+                            anim: 'slideLeft', // 从右往左
+                            area: ['65%', '100%'],
+                            shade: 0.000000001,
+                            // fixed: true,
+                            shadeClose: true,
+                            // scrollbar: false,
+                            // content: $('#shell'),
+                            content: popupHTML,
+                            move: false,
+                            resize: false,
+                            closeBtn: 0,
+                            end: function () {
+                                havePoped = false;
+                            }
+                        });
+                    });
+                });
+
+            }
+        }
+
+
+        function loadHTML(targeturl) {
+            // 使用 fetch 获取 HTML 内容并返回 Promise
+            return fetch(targeturl)
+                .then(response => {
+                    // 检查响应是否成功
+                    if (!response.ok) {
+                        throw new Error('网络响应失败');
+                    }
+                    // 将响应转换为文本
+                    return response.text();
+                })
+                .then(htmlString => {
+                    // 此处 htmlString 包含了外部 HTML 文件的内容
+                    popupHTML = htmlString;
+                    return popupHTML;
+                })
+                .catch(error => {
+                    console.error('获取外部 HTML 时出错:', error);
+                });
+        }
+
+        // layui.use(function () {
+        //     var layer = layui.layer;
+        //     var util = layui.util;
+        //     var $ = layui.$;
+
+        //     // layer.title('Projects', index);
+        //     // 事件
+        //     util.on('lay-on', {
+        //         'popup': function () {
+        //             // loadHTML().then(() => {
+        //                 layer.open({
+        //                     type: 1,
+        //                     title: false,
+        //                     offset: 'r',
+        //                     anim: 'slideLeft', // 从右往左
+        //                     area: ['65%', '100%'],
+        //                     shade: 0.000000001,
+        //                     // fixed: true,
+        //                     shadeClose: true,
+        //                     // scrollbar: false,
+        //                     // content: $('#shell'),
+        //                     content: popupHTML,
+        //                     move: false,
+        //                     resize: false,
+        //                     closeBtn: 0,
+        //                 });
+        //             // });
+        //         },
+        //     });
+        // });
+    </script>
+
+</body>
+
+</html>
